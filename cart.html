@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - M | N E M A R T</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">M | N E M A R T</a>
+      <a href="https://discord.gg/abtkMU7xDm" target="_blank" class="nav-btn discord">Join Discord</a>
+    </div>
+  </nav>
+  <main class="container checkout-main">
+    <h1>Checkout</h1>
+    <div id="cart-summary"></div>
+    <form id="checkout-form">
+      <label>Email Address</label>
+      <input type="email" id="email" required>
+      <label>Discord Username</label>
+      <input type="text" id="discord" placeholder="username#0000" required>
+      <button type="submit" class="btn-primary">Complete Purchase</button>
+    </form>
+    <div id="discord-popup" class="popup hidden">
+      <div class="popup-content">
+        <h2>Join Our Discord</h2>
+        <p>To claim your product, please join our Discord server:</p>
+        <a href="https://discord.gg/abtkMU7xDm" target="_blank" class="btn-primary">Join Discord</a>
+        <button onclick="closePopup()" class="btn-secondary">Close</button>
+      </div>
+    </div>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html> 

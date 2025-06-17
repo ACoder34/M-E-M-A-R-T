@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - M | N E M A R T</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <a href="index.html" class="logo">M | N E M A R T</a>
+      <a href="cart.html" class="nav-btn">Cart 🛒</a>
+    </div>
+  </nav>
+  <main class="container">
+    <div id="admin-login" class="checkout-main" style="max-width:350px; margin:3rem auto;">
+      <h2 style="text-align:center;">Admin Login</h2>
+      <form id="login-form">
+        <label>Username</label>
+        <input type="text" id="admin-username" required autocomplete="username">
+        <label>Password</label>
+        <input type="password" id="admin-password" required autocomplete="current-password">
+        <button type="submit" class="btn-primary" style="width:100%;margin-top:1rem;">Login</button>
+        <div id="login-error" style="color:#ff6b6b;margin-top:0.7rem;text-align:center;"></div>
+      </form>
+    </div>
+    <div id="admin-panel" style="display:none;">
+      <h1>Admin Panel</h1>
+      <section class="admin-section">
+        <h2>Add Product</h2>
+        <form id="add-product-form">
+          <input type="text" id="product-name" placeholder="Product Name" required>
+          <input type="text" id="product-desc" placeholder="Description">
+          <input type="number" id="product-price" placeholder="Price" required>
+          <input type="text" id="product-image" placeholder="Image URL">
+          <button type="submit" class="btn-primary">Add Product</button>
+        </form>
+        <div id="product-list"></div>
+      </section>
+      <section class="admin-section">
+        <h2>Add Coupon</h2>
+        <form id="add-coupon-form">
+          <input type="text" id="coupon-code" placeholder="Coupon Code" required>
+          <input type="number" id="coupon-discount" placeholder="Discount %" required>
+          <input type="date" id="coupon-valid">
+          <button type="submit" class="btn-primary">Add Coupon</button>
+        </form>
+        <div id="coupon-list"></div>
+      </section>
+    </div>
+  </main>
+  <script src="main.js"></script>
+  <script>
+    // Simple admin login
+    document.getElementById('login-form').onsubmit = function(e) {
+      e.preventDefault();
+      const user = document.getElementById('admin-username').value.trim();
+      const pass = document.getElementById('admin-password').value;
+      if(user === 'admin' && pass === 'admin123') {
+        document.getElementById('admin-login').style.display = 'none';
+        document.getElementById('admin-panel').style.display = '';
+      } else {
+        document.getElementById('login-error').innerText = 'Invalid username or password.';
+      }
+    };
+  </script>
+</body>
+</html> 
